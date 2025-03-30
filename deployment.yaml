@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: youtube-clone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: youtube-clone
+  template:
+    metadata:
+      labels:
+        app: youtube-clone
+    spec:
+      containers:
+      - name: youtube-clone
+        image: rohitsharma740/youtube-clone:latest  # Update with your Docker image
+        ports:
+        - containerPort: 3000
